@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تورنمنت گل یا پوچ | سیستم مدیریت مسابقات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Samim:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="animate__animated animate__fadeInDown">
+        <div class="container">
+            <h1>تورنمنت گل یا پوچ</h1>
+            <p>سیستم مدیریت مسابقات پیشرفته</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- مرحله ورود تیم‌ها -->
+        <div id="team-entry" class="card animate__animated animate__fadeIn">
+            <h2>ورود تیم‌های شرکت کننده</h2>
+            <p>لطفاً نام 6 تیم را وارد نمایید:</p>
+            <div class="team-input">
+                <div class="input-group">
+                    <input type="text" placeholder="نام تیم اول" class="team-name">
+                    <input type="text" placeholder="نام تیم دوم" class="team-name">
+                    <input type="text" placeholder="نام تیم سوم" class="team-name">
+                    <input type="text" placeholder="نام تیم چهارم" class="team-name">
+                    <input type="text" placeholder="نام تیم پنجم" class="team-name">
+                    <input type="text" placeholder="نام تیم ششم" class="team-name">
+                </div>
+                <button id="submit-teams" class="btn-primary">
+                    <i class="fas fa-check"></i> ثبت تیم‌ها
+                </button>
+            </div>
+        </div>
+        <!-- مرحله گروهی -->
+        <div id="group-stage" class="hidden">
+            <div class="card animate__animated animate__fadeIn">
+                <h2>مرحله گروهی</h2>
+                <div class="progress-container">
+                    <div id="group-progress" class="progress-bar"></div>
+                </div>
+                <div class="rules">
+                    <p><strong>قوانین مرحله گروهی:</strong></p>
+                    <ul>
+                        <li>برد عادی: 2 امتیاز | برد در دوئل: 1 امتیاز | باخت: 0 امتیاز</li>
+                        <li>برنده بازی باید به امتیاز 9 برسد</li>
+                        <li>مرتب‌سازی جدول بر اساس: 1- امتیاز 2- تفاضل گل</li>
+                    </ul>
+                </div>
+                <div id="group-tables" class="tables-container"></div>
+                <button id="draw-groups" class="btn-secondary hidden">
+                    <i class="fas fa-random"></i> قرعه‌کشی گروه‌ها
+                </button>
+            </div>
+            <div id="group-matches" class="card hidden animate__animated animate__fadeIn">
+                <h2>بازی‌های گروهی</h2>
+                <div id="matches-container"></div>
+            </div>
+        </div>
+        <div id="knockout-stage" class="hidden">
+            <div class="card animate__animated animate__fadeIn">
+                <h2>مرحله حذفی</h2>
+                <div class="progress-container">
+                    <div id="knockout-progress" class="progress-bar"></div>
+                </div>
+                <div class="rules">
+                    <p><strong>قوانین مرحله حذفی:</strong></p>
+                    <ul>
+                        <li>نیمه نهایی: بازی‌های رفت و برگشت (برنده باید به امتیاز 11 برسد)</li>
+                        <li>فینال: برنده باید به امتیاز 21 برسد</li>
+                        <li>در صورت تساوی در نیمه نهایی، برنده با دوئل مشخص می‌شود</li>
+                    </ul>
+                </div>
+                <div id="semifinal-matches"></div>
+                <div id="final-match" class="hidden"></div>
+            </div>
+        </div>
+        <div id="winner-section" class="card hidden animate__animated animate__fadeIn">
+            <div style="text-align: center;">
+                <div class="trophy">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h2>برنده نهایی تورنمنت</h2>
+                <div id="champion" class="winner-name"
+                    style="font-size: 2rem; color: var(--accent); font-weight: bold;"></div>
+                <p id="celebration-message" style="margin-top: 20px;"></p>
+                <button id="restart-tournament" class="btn-accent" style="margin-top: 30px;">
+                    <i class="fas fa-redo"></i> شروع تورنمنت جدید
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="floating-btn hidden" id="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
